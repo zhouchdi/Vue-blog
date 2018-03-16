@@ -1,20 +1,23 @@
 # zblog
 
-> my blog station
+> 我的博客网站
+
+> 技术栈：Vue + Vue-router + Vuex + axios + Element + node + mongodb
 
 ## Build Setup
 
 ``` bash
-# install dependencies
+
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 在本地localhost:8080服务器会以热加载的方式运行
 npm run dev
 
-# build for production with minification
+# 压缩运代码
 npm run build
 
-# build for production and view the bundle analyzer report
+# 构建运行代码并查看包分析器报告
 npm run build --report
 ```
 
