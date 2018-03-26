@@ -3,13 +3,13 @@ const path = require('path')
 const utils = require('./utils')
 const webpack = require('webpack')
 const config = require('../config')
-const merge = require('webpack-merge')
+const merge = require('webpack-merge')//合并 webpack配置
 const baseWebpackConfig = require('./webpack.base.conf')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')//静态资源集中输出
+const HtmlWebpackPlugin = require('html-webpack-plugin')//HTML文件的发布
+const ExtractTextPlugin = require('extract-text-webpack-plugin')//css 分离
 const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')//js压缩
 
 const env = require('../config/prod.env')
 
@@ -46,7 +46,7 @@ const webpackConfig = merge(baseWebpackConfig, {
       filename: utils.assetsPath('css/[name].[contenthash].css'),
       // Setting the following option to `false` will not extract CSS from codesplit chunks.
       // Their CSS will instead be inserted dynamically with style-loader when the codesplit chunk has been loaded by webpack.
-      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`, 
+      // It's currently set to `true` because we are seeing that sourcemaps are included in the codesplit bundle as well when it's `false`,
       // increasing file size: https://github.com/vuejs-templates/webpack/issues/1110
       allChunks: true,
     }),
@@ -106,6 +106,15 @@ const webpackConfig = merge(baseWebpackConfig, {
       async: 'vendor-async',
       children: true,
       minChunks: 3
+    }),
+    // 将第三方库文件打包
+    new webpack.optimize.CommonsChunkPlugin({
+      //name对应入口文件中的名字，我们起的是jQuery
+      name:['jquery'],
+      //把文件打包到哪里，是一个路径
+      filename:"assets/js/[name].js",
+      //最小打包的文件模块数，这里直接写2就好
+      minChunks:2
     }),
 
     // copy custom static assets

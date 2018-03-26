@@ -31,7 +31,7 @@ ul,li {
   list-style: none;
 }
 img {
-  border:1px solid #eaeaea; border-image: none; display: inline;
+  border:0; border-image: none; display: inline;
 }
 input,textarea,div {
   resize: none;

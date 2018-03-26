@@ -2,6 +2,7 @@
 const path = require('path')
 const utils = require('./utils')
 const config = require('../config')
+const webpack = require('webpack')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
@@ -13,7 +14,8 @@ function resolve (dir) {
 module.exports = {
   context: path.resolve(__dirname, '../'),
   entry: {
-    app: './src/main.js'
+    app: './src/main.js',
+    jquery:'jquery'
   },
   output: {
     path: config.build.assetsRoot,
@@ -78,5 +80,11 @@ module.exports = {
     net: 'empty',
     tls: 'empty',
     child_process: 'empty'
-  }
+  },
+  plugins:[
+    // 引入第三方库
+    new webpack.ProvidePlugin({
+      $:"jquery"
+    })
+  ]
 }

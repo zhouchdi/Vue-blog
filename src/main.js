@@ -5,10 +5,13 @@ import App from './App'
 import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
+import animate from 'animate.css';
 
 Vue.config.productionTip = false;
 //引入element-ti
 Vue.use(ElementUI);
+// 引入animate.css
+Vue.use(animate);
 
 /* eslint-disable no-new */
 new Vue({
