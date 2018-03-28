@@ -20,6 +20,7 @@ export default {
 }
 * {
   margin: 0; padding: 0;
+  box-sizing: border-box;
 }
 html {
   margin: 0; padding: 0; border-image: none;
