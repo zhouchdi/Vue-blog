@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import Loading from '@/common/_loading'
-import v from '@/common/article/comment'
+import v from '@/common/article/article'
 
 Vue.use(Router);
 
