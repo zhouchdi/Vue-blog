@@ -78,6 +78,13 @@ const webpackConfig = merge(baseWebpackConfig, {
     new webpack.HashedModuleIdsPlugin(),
     // enable scope hoisting
     new webpack.optimize.ModuleConcatenationPlugin(),
+    // 将第三方库文件打包
+    new webpack.optimize.CommonsChunkPlugin({
+      //name对应入口文件中的名字，我们起的是jQuery
+      name:'jquery',
+      //最小打包的文件模块数，这里直接写2就好
+      minChunks:Infinity,
+    }),
     // split vendor js into its own file
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -107,16 +114,6 @@ const webpackConfig = merge(baseWebpackConfig, {
       children: true,
       minChunks: 3
     }),
-    // 将第三方库文件打包
-    new webpack.optimize.CommonsChunkPlugin({
-      //name对应入口文件中的名字，我们起的是jQuery
-      name:['jquery'],
-      //把文件打包到哪里，是一个路径
-      filename:"assets/js/[name].js",
-      //最小打包的文件模块数，这里直接写2就好
-      minChunks:2
-    }),
-
     // copy custom static assets
     new CopyWebpackPlugin([
       {

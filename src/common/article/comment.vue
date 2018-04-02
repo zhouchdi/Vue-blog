@@ -32,6 +32,8 @@
 </template>
 
 <script>
+  // 评论的楼数
+  let commentsLength = 0;
   import Says from './says'
     export default {
         name: "comment",
@@ -40,7 +42,6 @@
       },
       data(){
           return {
-            commentsLength:0,
             comments:[
               {
                 'txt':'123',
@@ -84,6 +85,7 @@
           }
       },
       computed:{
+        // 将评论逆转使得最新的评论出现在最上面
         reverseComments:function(){
           return this.comments.reverse();
         }
@@ -91,9 +93,9 @@
       methods:{
         //  评论楼层数
         comsLength:function(index){
-          this.commentsLength = this.comments.length;
-          this.commentsLength -= index;
-          return this.commentsLength;
+          commentsLength = this.comments.length;
+          commentsLength -= index;
+          return commentsLength;
         }
       }
     }

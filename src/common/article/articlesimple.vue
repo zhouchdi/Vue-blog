@@ -9,7 +9,7 @@
       <!--主要内容-->
       <div class="article_content">
         <!--目录组件-->
-        <articleList></articleList>
+        <articleList :artsList="artsList"></articleList>
         <p>2017年我减肥减掉了50斤，但是过年时开始得意忘形，大吃大喝，有时候一天喝三顿，过的非常放肆。但这个世界就是公平的，过年20几天里，以每天一斤的速度反弹着，今天早上称重回到了244.3斤。我吓傻了，竟然反弹了20几斤。今年一月份我还承诺要减掉50斤体重，现在目标实现了-20斤。记得听过一句话：</p>
         <blockquote>只要你不认输，就不会失败，只是在成功的路上。</blockquote>
         <p>我重新开始减肥，我相信今年一定可以完成我减肥的目标50斤，现在建立一个微信群（100人已满），希望有想减肥的小伙伴，我们一起入群加油，互相鼓励，一起完成今年的减肥目标。更希望有减肥成功经历的高手进入，进行指点。</p>
@@ -89,11 +89,39 @@
   // 评论
   import comment from './comment'
     export default {
-        name: "Article",
+        name: "articlesimple",
+      // 组件
       components:{
         articleList:articleList,
         recommend:recommend,
         comment:comment
+      },
+      data(){
+        return {
+          // 文章目录
+          artsList:[
+            {
+              _id:'001-242',
+              _title:'001.勇敢的面对自己的放肆-242斤'
+            },
+            {
+              _id:'002-240',
+              _title:'002.第二天采用自由泳的姿势游一个小时-240.2斤'
+            },
+            {
+              _id:'003-241',
+              _title:'003.今天不去运动，但是晚饭一定不吃-241斤'
+            },
+            {
+              _id:'004-239',
+              _title:'004.减肥5天了，作个小总结-239.8'
+            },
+            {
+              _id:'005-244',
+              _title:'005.深圳出差胖了5斤肉'
+            }
+          ]
+        }
       },
       mounted(){
         this.$nextTick(function(){
@@ -118,187 +146,5 @@
 </script>
 
 <style lang="less">
-  @green:#8AC78F;
-  .span_a(){
-    span{
-      display: block;
-    }
-    a{
-      color: #999;
-      display: inline-block;
-    }
-    a:hover{
-      color:@green;
-    }
-  }
-  div.content{
-    width: 100%;
-    float:left;
-    .article{
-      padding: 0 20px;
-      background-color:#fff;
-      border: 1px solid #eaeaea;
-      border-radius:4px;
-      /*标题*/
-      .article_title{
-        margin-bottom: 20px;
-        padding: 25px 0;
-        border-bottom: 1px solid #eee;
-        h2{
-          font-size: 26px;
-          line-height: 36px;
-          margin-bottom: 10px;
-          font-weight: 500;
-          a{
-            color: #555;
-          }
-        }
-        p{
-          font-size:12px;
-          color:#999;
-          span{
-            display: inline-block;
-            margin-right: 20px;
-            a{
-              color: #666;
-            }
-            a:hover{
-              color: @green;
-            }
-          }
-        }
-      }
-      @media (max-width:640px){
-        .article_title{
-          text-align: left;
-          padding: 15px 0;
-          h2{
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-            line-height: 22px;
-          }
-        }
-      }
-      /*主要内容*/
-      .article_content{
-        overflow: hidden;
-        text-align: left;
-        font-size: 15px;
-        h1{
-          margin:20px 0;
-          font-size: 20px;
-          font-weight: bold;
-          padding-bottom: 10px;
-          border-bottom: 1px solid #eee;
-        }
-        blockquote{
-          margin: 30px;
-          padding: 15px 20px;
-          font-size: 16px;
-          color: #999;
-          border-left: 5px solid #eee;
-          user-select: none;
-        }
-        p{
-          margin-bottom: 20px;
-          /*允许对长的不可分割的单词进行分割并换行到下一行。*/
-          word-wrap:break-word;
-          /*规定非中日韩文本的换行规则*/
-          word-break: break-word;
-          /*文本开头空2em*/
-          text-indent:2em;
-          line-height: 22px;
-        }
-      }
-      /*版权申明*/
-      .article_copyright{
-        background: #eee;
-        padding: 8px 30px;
-        text-align: center;
-        margin-bottom: 18px;
-        font-size: 12px;
-        cursor: pointer;
-        a{
-          color: #aaa;
-        }
-      }
-      .article_copyright:hover{
-        background: @green;
-        a{
-          color: #fff;
-        }
-      }
-      /*分享*/
-      .article_share{
-        color: #666;
-        position: relative;
-        margin: 30px 0;
-        div.bdsharebuttonbox{
-          line-height: 24px;
-          height: 24px;
-          overflow: hidden;
-          vertical-align: top;
-          span{
-            position: relative;
-            vertical-align: top;
-          }
-          a{
-            width: 24px;
-            height: 24px;
-            display: inline-block;
-            margin: 0 2px;
-            background: url(../../assets/images/jspang/share.png) no-repeat;
-            float: none;
-            font-size: 14px;
-          }
-          a.bds_more,a.bds_count{
-            background: none;
-            width: auto;
-            height: auto;
-            position: relative;
-            top: -6px;
-          }
-          a.bds_tsina{background-position     : 0 0;}
-          a.bds_weixin{background-position    : 0 -33px;}
-          a.bds_qzone{background-position     : 0 -65px;}
-          a.bds_sqq{background-position       : 0 -98px;}
-          a.bds_renren{background-position    : 0 -131px;}
-          a.bds_tqq{background-position       : 0 -163px;}
-          a.bds_diandian{background-position  : 0 -356px;}
-          a.bds_youdao{background-position    : 0 -388px;}
-          a.bds_ty{background-position        : 0 -420px;}
-          a.bds_fbook{background-position     : 0 -452px;}
-          a.bds_twi{background-position       : 0 -484px;}
-          a.bds_kaixin001{background-position : 0 -228px;}
-          a.bds_taobao{background-position    : 0 -196px;}
-          a.bds_douban{background-position    : 0 -324px;}
-          a.bds_mail{background-position      : 0 -548px;}
-          a.bds_copy{background-position      : 0 -516px;}
-          a.bds_bdhome{background-position    : 0 -292px;}
-          a.bds_tqf{background-position       : 0 -260px;}
-        }
-      }
-      /*前后跳转路由*/
-      .article_route{
-        margin-bottom: 30px;
-        overflow: hidden;
-        font-size: 14px;
-        color: #bbb;
-        .article_route_last{
-          float: left;
-          text-align: left;
-          width: 50%;
-          border-right: 1px solid #eee;
-          .span_a();
-        }
-        .article_route_next{
-          float: right;
-          text-align: right;
-          width: 50%;
-          .span_a();
-        }
-      }
-    }
-  }
+  @import '../../assets/less/article.less';
 </style>

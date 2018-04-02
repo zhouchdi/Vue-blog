@@ -1,0 +1,183 @@
+@green:#8AC78F;
+.span_a(){
+  span{
+    display: block;
+  }
+  a{
+    color: #999;
+    display: inline-block;
+  }
+  a:hover{
+    color:@green;
+  }
+}
+div.content{
+  width: 100%;
+  float:left;
+  .article{
+    padding: 0 20px;
+    background-color:#fff;
+    border: 1px solid #eaeaea;
+    border-radius:4px;
+    /*标题*/
+    .article_title{
+      margin-bottom: 20px;
+      padding: 25px 0;
+      border-bottom: 1px solid #eee;
+      h2{
+        font-size: 26px;
+        line-height: 36px;
+        margin-bottom: 10px;
+        font-weight: 500;
+        a{
+          color: #555;
+        }
+      }
+      p{
+        font-size:12px;
+        color:#999;
+        span{
+          display: inline-block;
+          margin-right: 20px;
+          a{
+            color: #666;
+          }
+          a:hover{
+            color: @green;
+          }
+        }
+      }
+    }
+    @media (max-width:640px){
+      .article_title{
+        text-align: left;
+        padding: 15px 0;
+        h2{
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 5px;
+          line-height: 22px;
+        }
+      }
+    }
+    /*主要内容*/
+    .article_content{
+      overflow: hidden;
+      text-align: left;
+      font-size: 15px;
+      h1{
+        margin:20px 0;
+        font-size: 20px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      blockquote{
+        margin: 30px;
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #999;
+        border-left: 5px solid #eee;
+        user-select: none;
+      }
+      p{
+        margin-bottom: 20px;
+        /*允许对长的不可分割的单词进行分割并换行到下一行。*/
+        word-wrap:break-word;
+        /*规定非中日韩文本的换行规则*/
+        word-break: break-word;
+        /*文本开头空2em*/
+        text-indent:2em;
+        line-height: 22px;
+      }
+    }
+    /*版权申明*/
+    .article_copyright{
+      background: #eee;
+      padding: 8px 30px;
+      text-align: center;
+      margin-bottom: 18px;
+      font-size: 12px;
+      cursor: pointer;
+      a{
+        color: #aaa;
+      }
+    }
+    .article_copyright:hover{
+      background: @green;
+      a{
+        color: #fff;
+      }
+    }
+    /*分享*/
+    .article_share{
+      color: #666;
+      position: relative;
+      margin: 30px 0;
+      div.bdsharebuttonbox{
+        line-height: 24px;
+        height: 24px;
+        overflow: hidden;
+        vertical-align: top;
+        span{
+          position: relative;
+          vertical-align: top;
+        }
+        a{
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          margin: 0 2px;
+          background: url(../../assets/images/jspang/share.png) no-repeat;
+          float: none;
+          font-size: 14px;
+        }
+        a.bds_more,a.bds_count{
+          background: none;
+          width: auto;
+          height: auto;
+          position: relative;
+          top: -6px;
+        }
+        a.bds_tsina{background-position     : 0 0;}
+        a.bds_weixin{background-position    : 0 -33px;}
+        a.bds_qzone{background-position     : 0 -65px;}
+        a.bds_sqq{background-position       : 0 -98px;}
+        a.bds_renren{background-position    : 0 -131px;}
+        a.bds_tqq{background-position       : 0 -163px;}
+        a.bds_diandian{background-position  : 0 -356px;}
+        a.bds_youdao{background-position    : 0 -388px;}
+        a.bds_ty{background-position        : 0 -420px;}
+        a.bds_fbook{background-position     : 0 -452px;}
+        a.bds_twi{background-position       : 0 -484px;}
+        a.bds_kaixin001{background-position : 0 -228px;}
+        a.bds_taobao{background-position    : 0 -196px;}
+        a.bds_douban{background-position    : 0 -324px;}
+        a.bds_mail{background-position      : 0 -548px;}
+        a.bds_copy{background-position      : 0 -516px;}
+        a.bds_bdhome{background-position    : 0 -292px;}
+        a.bds_tqf{background-position       : 0 -260px;}
+      }
+    }
+    /*前后跳转路由*/
+    .article_route{
+      margin-bottom: 30px;
+      overflow: hidden;
+      font-size: 14px;
+      color: #bbb;
+      .article_route_last{
+        float: left;
+        text-align: left;
+        width: 50%;
+        border-right: 1px solid #eee;
+        .span_a();
+      }
+      .article_route_next{
+        float: right;
+        text-align: right;
+        width: 50%;
+        .span_a();
+      }
+    }
+  }
+}

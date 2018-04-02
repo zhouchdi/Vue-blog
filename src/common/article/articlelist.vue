@@ -6,20 +6,8 @@
       </div>
       <!--目录内容-->
       <ul class="articlelist_content">
-        <li>
-          <a href="#">001.勇敢的面对自己的放肆-242斤</a>
-        </li>
-        <li>
-          <a href="#">002.第二天采用自由泳的姿势游一个小时-240.2斤</a>
-        </li>
-        <li>
-          <a href="#">003.今天不去运动，但是晚饭一定不吃-241斤</a>
-        </li>
-        <li>
-          <a href="#">004.减肥5天了，作个小总结-239.8</a>
-        </li>
-        <li>
-          <a href="#">005.深圳出差胖了5斤肉</a>
+        <li v-for="item in artsList">
+          <a :href="'#'+item._id">{{ item._title }}</a>
         </li>
       </ul>
     </div>
@@ -27,7 +15,10 @@
 
 <script>
     export default {
-        name: "articlelist"
+        name: "articlelist",
+      props:{
+        artsList:Array
+      }
     }
 </script>
 
@@ -45,6 +36,7 @@
     float: right;
     .articlelist_title{
       h3{
+        text-align: center;
         span{
           font-weight: normal;
           a{

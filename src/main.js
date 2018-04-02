@@ -10,7 +10,7 @@ import animate from 'animate.css';
 Vue.config.productionTip = false;
 //引入element-ti
 Vue.use(ElementUI);
-// 引入animate.css
+// 引入animate.less
 Vue.use(animate);
 
 /* eslint-disable no-new */
