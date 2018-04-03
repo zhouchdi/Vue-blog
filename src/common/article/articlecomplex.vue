@@ -10,35 +10,105 @@
       <div class="article_content">
         <!--目录组件-->
         <articleList :artsList="artsList"></articleList>
-        <p>2017年我减肥减掉了50斤，但是过年时开始得意忘形，大吃大喝，有时候一天喝三顿，过的非常放肆。但这个世界就是公平的，过年20几天里，以每天一斤的速度反弹着，今天早上称重回到了244.3斤。我吓傻了，竟然反弹了20几斤。今年一月份我还承诺要减掉50斤体重，现在目标实现了-20斤。记得听过一句话：</p>
-        <blockquote>只要你不认输，就不会失败，只是在成功的路上。</blockquote>
-        <p>我重新开始减肥，我相信今年一定可以完成我减肥的目标50斤，现在建立一个微信群（100人已满），希望有想减肥的小伙伴，我们一起入群加油，互相鼓励，一起完成今年的减肥目标。更希望有减肥成功经历的高手进入，进行指点。</p>
-        <p>这篇文章我会尽量达到周更新，给小伙伴一个正面的反馈，因为技术胖的业余爱好很少，可能这篇文章也算我除程序工作外的业余生活了，所以也会发布一些生活趣事在里边。算是对2018自己生活的一个反省记录。</p>
-        <h1><span id="001-242">001.勇敢的面对自己的放肆-242斤</span></h1>
-        <p>日期：2018-3-13  体重： <strong>242斤</strong></p>
-        <p>这是减肥的第一天，我建立了一个微信群，准备和小伙伴们一起减肥。运动是去健身房游泳一个小时，但是感觉没有游透，力气没有用完。</p>
-        <p>游泳回家之后非常的饿，吃了一个苹果，三个火腿肠（非常后悔吃火腿肠）。</p>
-        <h1><span id="002-240">002.第二天采用自由泳的姿势游一个小时-240.2斤</span></h1>
-        <p>日期：2018-3-14 体重：<strong>240.2斤</strong></p>
-        <p>目标：用自由泳的姿势游泳一个小时，并且晚上回家后只吃苹果。</p>
-        <p>目标并没有实现，体重增重0.8斤。在游完泳之后，和完一起健身的小伙伴去撸串，吃了200多元钱的肉串。一边吃一边互相鼓励，这是我们的最后一顿。</p>
-        <h1><span id="003-241">003.今天不去运动，但是晚饭一定不吃-241斤</span></h1>
-        <p>日期：2018-3-15  体重：<strong>241斤</strong></p>
-        <p>目标：中午吃玉米和两个苹果，晚上不晚饭，一个苹果代替</p>
-        <p>今天晚上要陪女神看电影，所以晚上不能去运动，但是一定要控制住饮食，争取约女神去散步一小时。</p>
-        <h1><span id="004-239">004.减肥5天了，作个小总结-239.8</span></h1>
-        <p>日期：2018-3-18 体重：<strong>239.8斤</strong></p>
-        <p>总结：5天时间，一共减重2.2斤。这个成绩自己是不满意的。让我自己找找原因：</p>
-        <p>这几天运动坚持的还挺好，只有一天没去运动。但是饮食方面就没有注意了。</p>
-        <p>* 3月14日：运动后去撸串并喝了三瓶啤酒。</p>
-        <p>* 3月15日：和老婆吃周黑鸭60元钱的，并喝饮料1瓶。</p>
-        <p>* 3月17日：和老婆中午吃火锅一顿，饮料奶茶各一瓶。</p>
-        <p>* 其他是晚上吃小食品，录完课停不下来的吃。</p>
-        <p>所以这周减肥效果并不好，今天开始解决晚上零食，就是一个苹果，一杯奶昔。</p>
-        <h1><span id="005-244">005.深圳出差胖了5斤肉</span></h1>
-        <p>日期：2018-3-27 体重：<strong>244.8斤</strong></p>
-        <p>总结：深圳出差了一周多，由于出差需要跟同事一起吃饭，还有些小伙伴约饭。回来后又觉的出差很辛苦，补了两顿火锅和烤肉，今天一量体重，胖了5斤。哎，内心崩溃了。
-          但是说了些减肥流水日记，就不能停下来，继续减肥。</p>
+        <h3>前言：</h3>
+        <p>公司项目中大量的使用了vue，感觉对vue知识的掌握也越来越熟练了，录制视频教程也让我受益匪浅，自己成长的同时，我更希望帮助其他前端小伙伴一起成长。这篇文章我们主要讲解vuex。</p>
+        <p><b>vuex</b>是一个专门为vue.js设计的集中式<b>状态</b>管理架构。状态？我把它理解为在data中的属性需要共享给其他vue组件使用的部分，就叫做状态。简单的说就是<b>data中需要共用的属性</b>。比如：我们有几个页面要显示用户名称和用户等级，或者显示用户的地理位置。如果我们不把这些属性设置为状态，那每个页面遇到后，都会到服务器进行查找计算，返回后再显示。
+          在中大型项目中会有很多共用的数据，所以尤大神给我们提供了vuex。</p>
+        <h1><span id="001">第1节：初出茅庐 来个小Demo</span></h1>
+        <p>我们还是利用vue-cli 的webpack生成我们的项目结构,如果你对vue-cli的知识不了解，可以花二三十分钟去看一下这个视频教程：<a href="#">http://jspang.com/2017/04/10/vue-cli/</a>  。项目目录生成后，引入我们的Vuex插件。</p>
+        <h3>引入vuex</h3>
+        <p>1.利用npm包管理工具，进行安装 vuex。在控制命令行中输入下边的命令就可以了。</p>
+        <div style="color: rgb(51, 51, 51); background-color: rgb(253, 246, 227); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><span style="color: #268bd2;">npm</span> <span style="color: #268bd2;">install</span> <span style="color: #268bd2;">vuex</span> <span style="color: #859900;">--</span><span style="color: #268bd2;">save</span></div>
+        <p>需要注意的是这里一定要加上 --save，因为你这个包我们在生产环境中是要使用的。</p>
+        <p>2.新建一个vuex文件夹（这个不是必须的），并在文件夹下新建store.js文件，文件中引入我们的vue和vuex。</p>
+        <div style="color: rgb(51, 51, 51); background-color: rgb(253, 246, 227); font-family: Consolas, &quot;Courier New&quot;, monospace; line-height: 19px; white-space: pre;"><div><span style="color: #859900;">import</span> <span style="color: #268bd2;">Vue</span> <span style="color: #859900;">from</span> <span style="color: #2aa198;">'vue'</span>;</div><div><span style="color: #859900;">import</span> <span style="color: #268bd2;">Vuex</span> <span style="color: #859900;">from</span> <span style="color: #2aa198;">'vuex'</span>;</div></div>
+        <p>3.使用我们vuex，引入之后用Vue.use进行引用。</p>
+        <p>通过这三步的操作，vuex就算引用成功了，接下来我们就可以尽情的玩耍了。</p>
+        <h3>入门小Demo(推荐视频观看)：</h3>
+        <p>我们这个小案例先声明一个state的count状态，在页面中使用显示这个count，然后可以利用按钮进行加减，如果你看过我的文章，你一定知道，在我们学基础知识 的时候经常编写这个程序。我们来张图片帮大家回忆一下。</p>
+        <p><img src="../../assets/images/jspang/20170227091542.png" alt="demo示例图"></p>
+        <p>就是这个程序，不过我们这次要用的是vuex来进行制作，并实现数据的共享。</p>
+        <p>1.现在我们store.js文件里增加一个常量对象。store.js文件就是我们在引入vuex时的那个文件。</p>
+        <p>2.用export default 封装代码，让外部可以引用。</p>
+        <p>3.新建一个vue的模板，位置在components文件夹下，名字叫count.vue。在模板中我们引入我们刚建的store.js文件，并在模板中用<span v-pre>{{$store.state.count}}</span>输出count 的值。</p>
+        <p>4.在store.js文件中加入两个改变state的方法。</p>
+        <p>这里的mutations是固定的写法，意思是改变的，我们到时候会用一节课专门讲这个mutations，所以你先不用着急，只知道我们要改变state的数值的方法，必须写在mutations里就可以了。</p>
+        <p>5.在count.vue模板中加入两个按钮，并调用mutations中的方法。</p>
+        <p>这样进行预览就可以实现对vuex中的count进行加减了。</p>
+
+        <h1><span id="002">第2节：state访问状态对象</span></h1>
+        <p>在第1节我们已经写了一个 const state ，这个就是我们说的访问状态对象，它就是我们SPA（单页应用程序）中的共享值。今天我们主要学习状态对象赋值给内部对象，也就是把stroe.js中的值，赋值给我们模板里data中的值。我们有三种赋值方式，我们一个一个来学习一下。</p>
+        <h3>一、通过computed的计算属性直接赋值</h3>
+        <p>computed属性可以在输出前，对data中的值进行改变，我们就利用这种特性把store.js中的state值赋值给我们模板中的data值。</p>
+        <p>这里需要注意的是return this.$store.state.count这一句，一定要写this，要不你会找不到$store的。这种写法很好理解，但是写起来是比较麻烦的，那我们来看看第二种写法。</p>
+        <h3>二、通过mapState的对象来赋值</h3>
+        <p>我们首先要用import引入mapState。</p>
+        <p>然后还在computed计算属性里写如下代码：</p>
+        <p>这里我们使用ES6的箭头函数来给count赋值。</p>
+        <h3>三、通过mapState的数组来赋值</h3>
+        <p>这个算是最简单的写法了，在实际项目开发当中也经常这样使用。</p>
+        <p>这就是三种赋值方式，是不是很简单，虽然简单，但是在实际项目中经常使用，一定要自己动手练习两遍啊。</p>
+
+        <h1><span id="003">第3节：Mutations修改状态</span></h1>
+        <p>上节课我们学习了怎么样读取state，那今天我们学习一下怎么样修改状态。这个常量我们在第一节课的时候也碰到过，并且进行了加减的操作。那这节课我们就具体学习一下，如何操作Mutations。</p>
+        <h3>$store.commit( )</h3>
+        <p>Vuex提供了commit方法来修改状态，我们粘贴出第一节课的代码内容，简单回顾一下，我们在button上的修改方法。</p>
+        <p>store.js文件：</p>
+        <h3>传值：</h3>
+        <p>这只是一个最简单的修改状态的操作，在实际项目中我们常常需要在修改状态时传值。比如上边的例子，是我们每次只加1，而现在我们要通过所传的值进行相加。其实我们只需要在Mutations里再加上一个参数，并在commit的时候传递就就可以了。我们来看具体代码：</p>
+        <p>现在store.js文件里给add方法加上一个参数n。添加的地方我已经标黄了。</p>
+        <p>在Count.vue里修改按钮的commit( )方法传递的参数，我们传递10，意思就是每次加10.</p>
+        <p>这样两个简单的修改我们就完成了传值，我们可以在浏览器中实验一下了。</p>
+        <h3>模板获取Mutations方法</h3>
+        <p>实际开发中我们也不喜欢看到$store.commit( )这样的方法出现，我们希望跟调用模板里的方法一样调用。</p>
+        <p>例如：@click="reduce"   就和没引用vuex插件一样。</p>
+        <p>要达到这种写法，只需要简单的两部就可以了：</p>
+        <ol>
+          <li>在模板count.vue里用import 引入我们的mapMutations：</li>
+          <li>在模板的< script>标签里添加methods属性，并加入mapMutations</li>
+        </ol>
+        <p>通过上边两部，我们已经可以在模板中直接使用我们的reduce或者add方法了，就像下面这样。</p>
+
+        <h1><span id="004">第4节：getters计算过滤操作</span></h1>
+        <p>getters从表面是获得的意思，可以把他看作在获取数据之前进行的一种再编辑,相当于对数据的一个过滤和加工。你可以把它看作store.js的计算属性。</p>
+        <h3>getters基本用法：</h3>
+        <p>比如我们现在要对store.js文件中的count进行一个计算属性的操作，就是在它输出前，给它加上100.</p>
+        <p>我们首先要在store.js里用const声明我们的getters属性。</p>
+        <p>写好了gettters之后，我们还需要在Vuex.Store()里引入，由于之前我们已经引入了state盒mutations，所以引入里有三个引入属性。代码如下，</p>
+        <p>在store.js里的配置算是完成了，我们需要到模板页对computed进行配置。在vue 的构造器里边只能有一个computed属性，如果你写多个，只有最后一个computed属性可用，所以要对上节课写的computed属性进行一个改造。改造时我们使用ES6中的展开运算符"..."。</p>
+        <p>需要注意的是，你写了这个配置后，在每次count 的值发生变化的时候，都会进行加100的操作。</p>
+        <h3>用mapGetters简化模板写法：</h3>
+        <p>我们都知道state和mutations都有map的引用方法把我们模板中的编码进行简化，我们的getters也是有的，我们来看一下代码。</p>
+        <p>首先用import引入我们的mapGetters</p>
+        <p>在computed属性中加入mapGetters</p>
+        <p>相信大家已经会了getters的用法，那我们下节课见了。</p>
+
+        <h1><span id="005">第5节：actions异步修改状态</span></h1>
+        <p>actions和之前讲的Mutations功能基本一样，不同点是，actions是异步的改变state状态，而Mutations是同步改变状态。至于什么是异步什么是同步这里我就不做太多解释了，如果你不懂自己去百度查一下吧。（视频中有讲解）</p>
+        <h3>在store.js中声明actions</h3>
+        <p>actions是可以调用Mutations里的方法的，我们还是继续在上节课的代码基础上进行学习，在actions里调用add和reduce两个方法。</p>
+        <p>在actions里写了两个方法addAction和reduceAction，在方法体里，我们都用commit调用了Mutations里边的方法。细心的小伙伴会发现这两个方法传递的参数也不一样。</p>
+        <ul>
+          <li>context：上下文对象，这里你可以理解称store本身。</li>
+          <li>{commit}：直接把commit对象传递过来，可以让方法体逻辑和代码更清晰明了。</li>
+        </ul>
+        <h3>模板中的使用</h3>
+        <p>我们需要在count.vue模板中编写代码，让actions生效。我们先复制两个以前有的按钮，并改成我们的actions里的方法名，分别是：addAction和reduceAction。</p>
+        <p>改造一下我们的methods方法，首先还是用扩展运算符把mapMutations和mapActions加入。</p>
+        <p>你还要记得用import把我们的mapActions引入才可以使用。</p>
+        <h3>增加异步检验</h3>
+        <p>我们现在看的效果和我们用Mutations作的一模一样，肯定有的小伙伴会好奇，那actions有什么用，我们为了演示actions的异步功能，我们增加一个计时器（setTimeOut）延迟执行。在addAction里使用setTimeOut进行延迟执行。</p>
+        <p>我们可以看到在控制台先打印出了‘我比reduce提前执行’这句话。</p>
+
+        <h1><span id="006">第6节：module模块组</span></h1>
+        <p>随着项目的复杂性增加，我们共享的状态越来越多，这时候我们就需要把我们状态的各种操作进行一个分组，分组后再进行按组编写。那今天我们就学习一下module：状态管理器的模块组操作。</p>
+        <h3>声明模块组：</h3>
+        <p>在vuex/store.js中声明模块组，我们还是用我们的const常量的方法声明模块组。代码如下：</p>
+        <p>声明好后，我们需要修改原来 Vuex.Stroe里的值：</p>
+        <h3>在模板中使用</h3>
+        <p>现在我们要在模板中使用count状态，要用插值的形式写入。</p>
+        <p>如果想用简单的方法引入，还是要在我们的计算属性中rutrun我们的状态。写法如下：</p>
+
       </div>
       <!--版权申明-->
       <div class="article_copyright">
@@ -89,7 +159,7 @@
   // 评论
   import comment from './comment'
     export default {
-        name: "articlecomplex",
+      name: "articlecomplex",
       components:{
         articleList:articleList,
         recommend:recommend,
@@ -99,12 +169,30 @@
         return {
           // 文章目录
           artsList:[
-            '第1节：初出茅庐 来个小Demo',
-            '第2节：state访问状态对象',
-            '第3节：Mutations修改状态',
-            '第4节：getters计算过滤操作',
-            '第5节：actions异步修改状态',
-            '第6节：module模块组'
+            {
+              _id:'001',
+              _title:'第1节：初出茅庐 来个小Demo'
+            },
+            {
+              _id:'002',
+              _title:'第2节：state访问状态对象'
+            },
+            {
+              _id:'003',
+              _title:'第3节：Mutations修改状态'
+            },
+            {
+              _id:'004',
+              _title:'第4节：getters计算过滤操作'
+            },
+            {
+              _id:'005',
+              _title:'第5节：actions异步修改状态'
+            },
+            {
+              _id:'006',
+              _title:'第6节：module模块组'
+            }
           ]
         }
       },
@@ -126,10 +214,53 @@
           s.src = 'http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion=' + ~(-new Date() / 36e5);
           (document.getElementsByClassName('article_share')[0]).appendChild(s);
         });
+        // // 代码高亮 设置margin
+        // $('table').css({
+        //   'margin-top':'12px',
+        //   'margin-bottom':'25px'
+        // });
       }
     }
 </script>
 
 <style lang="less">
   @import '../../assets/less/article.less';
+  .article{
+    .article_content{
+      h3{
+        margin: 20px 0;
+        font-size: 16px;
+      }
+      p{
+        >img{
+          display: block;
+          margin: 0 auto;
+        }
+        a{
+          color: @green;
+          text-decoration: underline;
+        }
+        a:hover{
+          color: red;
+        }
+      }
+      ul{
+        list-style: disc;
+        margin: 0 0 20px 50px;
+        li{
+          list-style: disc;
+          margin-bottom: 6px;
+        }
+      }
+      ol{
+        list-style: decimal;
+        margin: 0 0 20px 50px;
+        li{
+          list-style: decimal;
+          margin-bottom: 6px;
+          height: 50px;
+        }
+      }
+    }
+  }
 </style>

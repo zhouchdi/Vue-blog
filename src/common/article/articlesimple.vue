@@ -147,4 +147,17 @@
 
 <style lang="less">
   @import '../../assets/less/article.less';
+  .article{
+    /*主要内容*/
+    .article_content{
+      blockquote{
+        margin: 30px;
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #999;
+        border-left: 5px solid #eee;
+        user-select: none;
+      }
+    }
+  }
 </style>
