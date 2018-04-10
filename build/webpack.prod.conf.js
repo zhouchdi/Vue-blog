@@ -81,7 +81,8 @@ const webpackConfig = merge(baseWebpackConfig, {
     // 将第三方库文件打包
     new webpack.optimize.CommonsChunkPlugin({
       //name对应入口文件中的名字，我们起的是jQuery
-      name:'jquery',
+      // names:['jquery','lodash','marked'],
+      name:['jquery'],
       //最小打包的文件模块数，这里直接写2就好
       minChunks:Infinity,
     }),

@@ -2,7 +2,7 @@
     <div class="articlelist">
       <!--目录标题-->
       <div class="articlelist_title">
-        <h3>目录 <span>[<a href="#">隐藏</a>]</span></h3>
+        <h3>目录 <span>[<a href="#" @click.prevent="hideList">隐藏</a>]</span></h3>
       </div>
       <!--目录内容-->
       <ul class="articlelist_content">
@@ -15,9 +15,27 @@
 
 <script>
     export default {
-        name: "articlelist",
+      name: "articlelist",
       props:{
         artsList:Array
+      },
+      methods:{
+        hideList:function(){
+          let uul = $('ul.articlelist_content')
+            if($(uul).attr('style')){
+              $(uul).attr('style','').addClass('animated lightSpeedIn');
+
+              setTimeout(function(){
+                $(uul).removeClass('animated lightSpeedIn');
+              },1000);
+            }else{
+              $(uul).addClass('animated lightSpeedOut');
+
+              setTimeout(function(){
+                $(uul).removeClass('animated lightSpeedOut').attr('style','display:none');
+              },1000);
+            };
+        }
       }
     }
 </script>
