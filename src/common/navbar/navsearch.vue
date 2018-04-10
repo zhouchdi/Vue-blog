@@ -1,61 +1,11 @@
 <template>
-  <div class="nav-bar-father">
-    <div class="nav-bar">
-      <!--上-->
-      <div class="top_line">
-        <ul class="top_line_ul">
-          <li class="top_line_li"><a href="">Vue.js视频教程</a></li>
-          <li class="top_line_li"><a href="">其它教程</a></li>
-          <li class="top_line_li">
-            <a href="">关注本站<i class="icon iconfont icon-31shouqi smallxiala" style="transform: rotateX(180deg) translateY(2px);"></i></a>
-            <!--RSS订阅-->
-            <div class="top_line_li_dingyue" style="display:none"><i class="icon iconfont icon-dingyue"></i><span>RSS订阅</span></div>
-          </li>
-        </ul>
-      </div>
-      <!--下-->
-      <div class="bottom_line">
-        <!--下左-->
-        <ul class="bottom_line_ul1">
-          <li style="vertical-align: bottom;"><a href="" title="zcd的博客"><img src="../../assets/images/my/logo.png" alt="logo"></a></li>
-          <li id="bottom_line_ul1_last_li"><p>关注WEB前端技术<br>每年帮助超过01人前端爱好者学习</p></li>
-        </ul>
-        <!--下右-->
-        <ul class="bottom_line_ul2">
-          <li><a>首页</a></li>
-          <li><a>视频教程</a></li>
-          <li><a>前端日记</a></li>
-          <li><a>生活趣事</a></li>
-          <li><a>自我介绍</a></li>
-          <li>
-            <i class="icon iconfont icon-sousuo" id="bottom_search"></i>
-          </li>
-        </ul>
-      </div>
-    </div>
     <!--搜索框-->
     <div class="bottom_line_search" style="display: none">
-      <form action="" method="get">
+        <form action="" method="get">
         <input type="text" placeholder="输入关键字">
         <button type="submit"><i class="icon iconfont icon-sousuo"></i></button>
-      </form>
+        </form>
     </div>
-
-    <!--缩略符-->
-    <div class="thumb">
-      <i class="icon iconfont icon-fenlei"></i>
-      <div class="thumb_mask" style="display: none;">
-        <ul>
-          <li><a>首页</a></li>
-          <li><a>视频教程</a></li>
-          <li><a>前端日记</a></li>
-          <li><a>生活趣事</a></li>
-          <li><a>自我介绍</a></li>
-        </ul>
-        <div class="thumb_mask_blank"></div>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -69,30 +19,6 @@
 
         },
         mounted(){
-          // 订阅动画
-          let dingyue = $('.top_line_li_dingyue');
-          $($('.top_line_li')[2]).hover(function(){
-            if($(dingyue).attr('style')){
-              $(dingyue).removeAttr('style').addClass('animated bounceIn');
-              $(this).find('a>i').removeAttr('style').addClass('animated lightSpeedIn');
-            }
-
-            setTimeout(function(){
-              $(dingyue).removeClass('animated bounceIn');
-                $($('.top_line_li')[2]).find('a>i').removeClass('animated lightSpeedIn');
-            },500)
-          },function(){
-            if(!$(dingyue).attr('style')){
-              $(dingyue).addClass('animated bounceOut');
-              $(this).find('a>i').addClass('animated lightSpeedOut');
-            }
-
-            setTimeout(function(){
-              $(dingyue).removeClass('animated bounceOut').attr('style','display:none');
-              $($('.top_line_li')[2]).find('a>i').removeClass('animated lightSpeedOut').attr('style','transform: rotateX(180deg) translateY(2px);');
-            },500);
-          });
-
           //  搜索框
           let bottomLineSearch = $('div.bottom_line_search');
           $('#bottom_search').on('click',function(e){
@@ -111,32 +37,6 @@
                   $(bottomLineSearch).removeClass('animated bounceOutRight').attr('style','display:none');
                 }
               },500)
-          });
-
-          // 缩略图
-          let thumbMask = $('div.thumb>div.thumb_mask');
-          $('div.thumb>i.icon-fenlei').on('click',function(){
-            if($(thumbMask).attr('style')){
-              $(thumbMask).removeAttr('style').addClass('animated slideInLeft');
-            }
-
-            setTimeout(function(){
-              if($(thumbMask).hasClass('slideInLeft')){
-                $(thumbMask).removeClass('animated slideInLeft');
-              }
-            },1000)
-          });
-
-          $('div.thumb_mask>div.thumb_mask_blank').on('click',function(){
-            if(!$(thumbMask).attr('style')){
-              $(thumbMask).addClass('animated slideOutLeft');
-            }
-
-            setTimeout(function(){
-              if($(thumbMask).hasClass('slideOutLeft')){
-                $(thumbMask).removeClass('animated slideOutLeft').attr('style','display:none');
-              }
-            },1000)
           });
         }
     }
