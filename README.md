@@ -2,7 +2,7 @@
 
 > 我的博客网站
 
-> 技术栈：Vue + Vue-router + Vuex + axios + Element + node + mongodb
+> 技术栈：Vue + Vue-router + Vuex + axios + Element + node + mongodb + markdown
 
 ## Build Setup
 
