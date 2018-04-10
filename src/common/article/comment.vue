@@ -183,6 +183,7 @@
             position: absolute;
             right: 0;
             bottom: -1px;
+            cursor: pointer;
           }
         }
       }

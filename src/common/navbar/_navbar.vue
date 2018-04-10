@@ -261,7 +261,7 @@
         /*下右*/
         ul.bottom_line_ul2{
           float: right;
-          display: inline-block;
+          // display: inline-block;
           margin-top: 9px;
           li{
             float: left;

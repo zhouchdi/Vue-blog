@@ -6,7 +6,7 @@
     </ul>
     <!--内容-->
     <ul class="article_ul">
-      <li v-for="item in articles">
+      <li v-for="(item,index) in articles" :key="index">
         <a href="">{{ item.text }}</a>
       </li>
     </ul>

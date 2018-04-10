@@ -5,7 +5,7 @@
     </ul>
     <!--内容-->
     <ul class="class_ul">
-      <li v-for="item in classes">
+      <li v-for="(item,index) in classes" :key="index">
         <a href="">{{ item.text }}</a><span>({{ item.num }})</span>
       </li>
     </ul>

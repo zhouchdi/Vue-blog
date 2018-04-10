@@ -6,7 +6,7 @@
     </ul>
     <!--内容-->
     <ul class="notices_ul">
-      <li v-for="item in notices">
+      <li v-for="(item,index) in notices" :key="index">
         <a href="">{{ item.text }}</a><time>{{ item.time }}</time>
       </li>
     </ul>
@@ -61,7 +61,7 @@
         font-size: 12px;
         clear: both;
         a{
-          display: inline-block;
+          // display: inline-block;
           float: left;
           color: #666;
         }
@@ -69,7 +69,7 @@
           color:@green;
         }
         time{
-          display: inline-block;
+          // display: inline-block;
           float: right;
         }
       }

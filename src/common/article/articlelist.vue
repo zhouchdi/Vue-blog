@@ -6,7 +6,7 @@
       </div>
       <!--目录内容-->
       <ul class="articlelist_content">
-        <li v-for="item in artsList">
+        <li v-for="(item,index) in artsList" :key="index">
           <a :href="'#'+item._id">{{ item._title }}</a>
         </li>
       </ul>

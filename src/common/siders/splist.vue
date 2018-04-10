@@ -6,7 +6,7 @@
     </ul>
     <!--内容-->
     <ul class="list_ul">
-      <li v-for="item in lists">
+      <li v-for="(item,index) in lists" :key="index">
         <a href="">{{ item.text }}</a><span>({{ item.num }})</span>
       </li>
     </ul>
