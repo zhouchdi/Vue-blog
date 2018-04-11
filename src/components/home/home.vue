@@ -28,6 +28,8 @@
         <Sider></Sider> 
       </div>
     </div>
+    <!-- rollbar -->
+    <Rollbar></Rollbar>
   </div>
 </template>
 
@@ -37,14 +39,16 @@
   import Sider from '@/components/sider/sider'
   import Essay from '@/common/summary/essay'
   import EssayNoImg from '@/common/summary/essayNoImg'
-    export default {
+  import Rollbar from '@/common/rollbar/rollbar'
+     export default {
       name: "home",
       components:{
         Navbar:Navbar,
         Sider:Sider,
         Navsearch:Navsearch,
         Essay:Essay,
-        EssayNoImg:EssayNoImg
+        EssayNoImg:EssayNoImg,
+        Rollbar:Rollbar
       },
       mounted:function(){
         // siders到底，则显示第一个sider
