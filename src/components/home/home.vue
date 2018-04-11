@@ -3,6 +3,8 @@
     <header>
       <Navbar></Navbar>
     </header>
+    <!-- 搜索框 -->
+    <Navsearch></Navsearch>
     <div class="container">
       <div>
 
@@ -13,13 +15,15 @@
 </template>
 
 <script>
-  import Navbar from '../../common/navbar/_navbar'
-  import Sider from '../sider/sider'
+  import Navbar from '@/common/navbar/_navbar'
+  import Navsearch from '@/common/navbar/navsearch'
+  import Sider from '@/components/sider/sider'
     export default {
       name: "home",
       components:{
         Navbar:Navbar,
-        Sider:Sider
+        Sider:Sider,
+        Navsearch:Navsearch
       }
     }
 </script>

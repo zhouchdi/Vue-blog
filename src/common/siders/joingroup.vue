@@ -21,7 +21,7 @@
 
 <script>
     export default {
-        name: "joingroup"
+      name: "joingroup"
     }
 </script>
 

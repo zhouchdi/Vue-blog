@@ -10,12 +10,12 @@
 </template>
 
 <script>
-  import Notice from '../../common/siders/notice'
-  import Group from '../../common/siders/joingroup'
-  import Givemoney from '../../common/siders/givemoney'
-  import Article from '../../common/siders/articles'
-  import Splist from '../../common/siders/splist'
-  import Classes from '../../common/siders/classes'
+  import Notice from '@/common/siders/notice'
+  import Group from '@/common/siders/joingroup'
+  import Givemoney from '@/common/siders/givemoney'
+  import Article from '@/common/siders/articles'
+  import Splist from '@/common/siders/splist'
+  import Classes from '@/common/siders/classes'
     export default {
       name: "sider",
       components:{

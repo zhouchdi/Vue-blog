@@ -14,7 +14,7 @@
 
 <script>
     export default {
-        name: "classes",
+      name: "classes",
       data(){
           return {
             classes:[

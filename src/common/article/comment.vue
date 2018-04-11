@@ -34,7 +34,7 @@
 <script>
   // 评论的楼数
   let commentsLength = 0;
-  import Says from './says'
+  import Says from '@/common/article/says'
     export default {
         name: "comment",
       components:{

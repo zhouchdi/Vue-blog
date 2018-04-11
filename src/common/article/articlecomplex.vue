@@ -360,11 +360,11 @@
 
 <script>
   // 目录组件
-  import articlelist from './articlelist'
+  import articlelist from '@/common/article/articlelist'
   // 推荐
-  import recommend from './recommend'
+  import recommend from '@/common/article/recommend'
   // 评论
-  import comment from './comment'
+  import comment from '@/common/article/comment'
     export default {
       name: "articlecomplex",
       components:{

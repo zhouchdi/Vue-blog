@@ -15,7 +15,7 @@
 
 <script>
     export default {
-        name: "splist",
+      name: "splist",
       data(){
           return {
             lists:[

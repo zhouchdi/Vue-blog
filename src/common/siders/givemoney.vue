@@ -63,10 +63,7 @@
 
 <script>
     export default {
-        name: "givemoney",
-      methods:{
-
-      },
+      name: "givemoney",
       mounted(){
           // 切换页头
         let ulObj = $('ul.giveMoney_ul1>li');

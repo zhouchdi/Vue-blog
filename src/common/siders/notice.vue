@@ -61,7 +61,6 @@
         font-size: 12px;
         clear: both;
         a{
-          // display: inline-block;
           float: left;
           color: #666;
         }
@@ -69,7 +68,6 @@
           color:@green;
         }
         time{
-          // display: inline-block;
           float: right;
         }
       }
