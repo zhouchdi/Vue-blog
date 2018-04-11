@@ -1,8 +1,5 @@
 <template>
-  <article class="article">
-    <a href="">
-      <img src="../../assets/images/jspang/VUE-timeline.jpg" alt="">
-    </a>
+  <article class="article-no-img">
     <header>
       <a href="">
         Vue.js视频教程
@@ -24,7 +21,7 @@
 
 <script>
     export default {
-      name: "essay"
+      name: "essayNoImg"
     }
 </script>
 
@@ -39,19 +36,14 @@
   .article_text{
     padding-left: 20px;
   }
-  article.article{
+  article.article-no-img{
     max-width: 978px;
     border-radius: 4px 4px 0 0;
     border: 1px solid #eaeaea;
-    padding: 20px 20px 20px 255px;
+    padding: 20px;
     overflow: hidden;
     background-color: #fff;
     margin-bottom: -1px;
-    >a{
-      float: left;
-      margin-left: -235px;
-      width: 220px;
-    }
     >header{
       margin-bottom: 10px;
       text-align: left;

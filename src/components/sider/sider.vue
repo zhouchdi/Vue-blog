@@ -34,7 +34,7 @@
     float: left;
     width: 360px;
     position: relative;
-    /*margin-left: -360px;*/
+    margin-left: -360px;
     .sidebar_fadiv{
       clear: both;
       position: relative;
