@@ -51,6 +51,8 @@
         Rollbar:Rollbar
       },
       mounted:function(){
+        // 浏览器文档高度
+        let screenHight = 0;
         // siders到底，则显示第一个sider
         $(window).scroll(function(){//为了保证兼容性，这里取两个值，哪个有值取哪一个　　
           //scrollTop就是触发滚轮事件时滚轮的高度});
@@ -70,9 +72,21 @@
               'right':0
             });
           }
-        })
 
-        // 
+          // rollbar 滚动条的显示与消失，以及至顶部
+          // screenHight = document.documentElement.clientHeight  || document.body.clientHeight ;
+          if(scrollTop > 0){
+            $('div.rollbar').animate({
+              'display':'block',
+              'opacity':'1'
+            },'1000');
+          }else{
+            $('div.rollbar').animate({
+              'display':'none',
+              'opacity':'0'
+            },'1000');
+          }
+        })
       }
     }
 </script>
