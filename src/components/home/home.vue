@@ -75,18 +75,36 @@
 
           // rollbar 滚动条的显示与消失，以及至顶部
           // screenHight = document.documentElement.clientHeight  || document.body.clientHeight ;
-          if(scrollTop > 0){
-            $('div.rollbar').animate({
-              'display':'block',
-              'opacity':'1'
-            },'1000');
+          if(scrollTop > 30){
+            if($('div.rollbar').attr('style')){
+              $('div.rollbar').removeAttr('style').addClass('rollbarOp1');
+
+              let set1 = setTimeout(function(){
+                if($('div.rollbar').hasClass('rollbarOp0')){
+                  $('div.rollbar').removeClass('rollbarOp0');
+                }
+                clearTimeout(set1);
+              },250);
+            }
           }else{
-            $('div.rollbar').animate({
-              'display':'none',
-              'opacity':'0'
-            },'1000');
+            if(!$('div.rollbar').attr('style')){
+              $('div.rollbar').addClass('rollbarOp0');
+
+              let set0 = setTimeout(function(){
+                if($('div.rollbar').hasClass('rollbarOp1')){
+                  $('div.rollbar').removeClass('rollbarOp1');
+                }
+                $('div.rollbar').attr('style','display:none');
+                clearTimeout(set0);
+              },250);
+            }
           }
         })
+
+        // rollbar 点击回顶部
+        $('div.rollbar').on('click',function(){
+          $('html,body').animate({scrollTop: '0px'},'800');
+        });
       }
     }
 </script>
@@ -146,6 +164,14 @@
     }
     .container::after{
       clear: both;
+    }
+    >.rollbarOp1{
+      opacity: 1;
+      transition: all .8s;
+    }
+    >.rollbarOp0{
+      opacity: 0;
+      transition: all .8s;
     }
   }
 </style>

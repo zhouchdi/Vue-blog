@@ -1,9 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Loading from '@/common/_loading'
-import v from '@/common/article/articlecomplex'
 import Home from '@/components/home/home'
-import Nav from '@/common/navbar/_navbar'
+import My from '@/components/my/my'
 
 Vue.use(Router);
 
@@ -17,8 +15,9 @@ export default new Router({
       alias:'/home'
     },
     {
-      path:'/nav',
-      component:Nav
+      path:'/resume',
+      name:'My',
+      component:My
     }
   ]
 })

@@ -26,7 +26,7 @@
           <li><a>视频教程</a></li>
           <li><a>前端日记</a></li>
           <li><a>生活趣事</a></li>
-          <li><a>自我介绍</a></li>
+          <li><router-link :to="{name:'My'}">自我介绍</router-link></li>
           <li>
             <i class="icon iconfont icon-sousuo" id="bottom_search"></i>
           </li>
@@ -42,7 +42,9 @@
           <li><a>视频教程</a></li>
           <li><a>前端日记</a></li>
           <li><a>生活趣事</a></li>
-          <li><a>自我介绍</a></li>
+          <li>
+            <router-link :to="{name:'My'}">自我介绍</router-link>
+          </li>
         </ul>
         <div class="thumb_mask_blank"></div>
       </div>
@@ -80,27 +82,18 @@
           // 缩略图
           let thumbMask = $('div.thumb>div.thumb_mask');
           $('div.thumb>i.icon-fenlei').on('click',function(){
+            $('div.thumb_mask_blank').animate({'opacity':'0.2'},'fast');
             if($(thumbMask).attr('style')){
-              $(thumbMask).removeAttr('style').addClass('animated slideInLeft');
+              $(thumbMask).removeAttr('style');
+              $(thumbMask).children('ul').animate({'left':'0%'},'200');
             }
-
-            setTimeout(function(){
-              if($(thumbMask).hasClass('slideInLeft')){
-                $(thumbMask).removeClass('animated slideInLeft');
-              }
-            },1000)
           });
 
           $('div.thumb_mask>div.thumb_mask_blank').on('click',function(){
-            if(!$(thumbMask).attr('style')){
-              $(thumbMask).addClass('animated slideOutLeft');
-            }
-
-            setTimeout(function(){
-              if($(thumbMask).hasClass('slideOutLeft')){
-                $(thumbMask).removeClass('animated slideOutLeft').attr('style','display:none');
-              }
-            },1000)
+            $('div.thumb_mask_blank').animate({'opacity':'0'},'fast');
+            $(thumbMask).children('ul').animate({'left':'-65%'},'200',function(){
+              $(thumbMask).attr('style','display:none');
+            });
           });
         }
     }
@@ -237,6 +230,7 @@
             a{
               font-size: 18px;
               cursor: pointer;
+              color: #555;
             }
             a:hover{
               color: @greenColor;
@@ -291,17 +285,25 @@
         background-color: black;
         width: 65%;
         padding: 0 10px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -65%;
+        z-index: 10;
         li{
           text-align: left;
           padding: 20px;
           box-sizing: border-box;
           border-bottom: 1px solid #303C4A;
+          a{
+            color: #fff;
+          }
         }
       }
       div.thumb_mask_blank{
-        width: 35%;
+        width: 100%;
         background: #111;
-        opacity: 0.2;
+        opacity: 0;
       }
     }
   }

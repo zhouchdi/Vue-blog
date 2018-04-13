@@ -1,5 +1,5 @@
 <template>
-  <div class="rollbar">
+  <div class="rollbar" style="display:none">
       <div class="rollbar-icon">
           <i class="icon iconfont icon-jiantoushang jiantoushang"></i>
       </div>
@@ -19,8 +19,8 @@
         position: fixed;
         bottom: 20px;
         right: 20px;
+        opacity: 0;
         cursor: pointer;
-        display: none;
         div.rollbar-icon{
             background-color: #666;
             height: 50px;
