@@ -7,11 +7,6 @@ node_js:
   - node
   - '9'
   - '8'
-  - '7'
-  - '6'
-  - '5'
-  - '4'
-  - '0.12'
 matrix:
   fast_finish: true
   allow_failures:
