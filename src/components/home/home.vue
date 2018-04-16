@@ -34,6 +34,8 @@
 </template>
 
 <script>
+  import store from '@/vuex/store'
+  import { mapState } from 'vuex'
   import Navbar from '@/common/navbar/_navbar'
   import Navsearch from '@/common/navbar/navsearch'
   import Sider from '@/components/sider/sider'
@@ -42,6 +44,8 @@
   import Rollbar from '@/common/rollbar/rollbar'
      export default {
       name: "home",
+      store,
+      computed:mapState(['isIntoHome']),
       components:{
         Navbar:Navbar,
         Sider:Sider,
@@ -49,6 +53,17 @@
         Essay:Essay,
         EssayNoImg:EssayNoImg,
         Rollbar:Rollbar
+      },
+      beforeRouteEnter(to, from, next) {
+        if(this.isIntoHome){
+          next();
+          this.isIntoHome = false;
+        }else{
+          next(()=>{
+            window.location.reload()
+          })
+          isIntoHome = true;
+        }
       },
       mounted:function(){
         // 浏览器文档高度

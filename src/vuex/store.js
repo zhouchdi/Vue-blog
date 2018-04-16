@@ -4,7 +4,8 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 const state = {
-    count:1
+    // 是否进入主页面
+    isIntoHome:true,
 }
 
 export default new Vuex.Store({

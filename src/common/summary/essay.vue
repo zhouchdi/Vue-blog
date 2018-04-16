@@ -1,13 +1,13 @@
 <template>
   <article class="article">
-    <a href="">
+    <router-link :to="{name:'Articlecomplex'}">
       <img src="../../assets/images/jspang/VUE-timeline.jpg" alt="">
-    </a>
+    </router-link>
     <header>
-      <a href="">
+      <router-link to="/complex">
         Vue.js视频教程
         <i></i>
-      </a>
+      </router-link>
       <h2><a target="_blank" href="" title="VUE学习路线 ，让你不迷路 ，请按此顺序学习。-技术胖-胜洪宇关注web前端技术">VUE学习路线 ，让你不迷路 ，请按此顺序学习。<span>(10集)</span></a></h2>
       <span>置顶</span>
     </header>
