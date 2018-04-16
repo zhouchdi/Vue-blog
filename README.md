@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/zhouchdi/Vue-blog.svg?branch=master)](https://travis-ci.org/zhouchdi/Vue-blog)
+
 # zblog
 
 > 我的博客网站
