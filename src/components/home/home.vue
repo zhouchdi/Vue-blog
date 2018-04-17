@@ -12,18 +12,18 @@
             <h3>最新博文</h3>
             <div class="more"><a href="#">前端游戏视频教程</a></div>
           </div>
-          <Essay></Essay>
-          <EssayNoImg></EssayNoImg>
-          <Essay></Essay>
-          <Essay></Essay>
-          <Essay></Essay>
-          <Essay></Essay>
-          <Essay></Essay>
-          <EssayNoImg></EssayNoImg>
-          <Essay></Essay>
-          <Essay></Essay>
-          <Essay></Essay>
-          <Essay></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <EssayNoImg :intoHref="simpleUrl"></EssayNoImg>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <EssayNoImg :intoHref="simpleUrl"></EssayNoImg>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
+          <Essay :intoHref="complexUrl"></Essay>
         </div>
         <Sider></Sider> 
       </div>
@@ -45,7 +45,15 @@
      export default {
       name: "home",
       store,
-      computed:mapState(['isIntoHome']),
+      data(){
+        return {
+          simpleUrl:'/simple',
+          complexUrl:'/complex'
+        }
+      },
+      computed:{
+        ...mapState(['isIntoHome']),
+      },
       components:{
         Navbar:Navbar,
         Sider:Sider,
@@ -53,17 +61,6 @@
         Essay:Essay,
         EssayNoImg:EssayNoImg,
         Rollbar:Rollbar
-      },
-      beforeRouteEnter(to, from, next) {
-        if(this.isIntoHome){
-          next();
-          this.isIntoHome = false;
-        }else{
-          next(()=>{
-            window.location.reload()
-          })
-          isIntoHome = true;
-        }
       },
       mounted:function(){
         // 浏览器文档高度
@@ -131,7 +128,7 @@
   }
   .home_blog{
     background: #fff;
-    header{
+    >header{
       max-width: 1200px;
       margin: 0 auto;
       padding: 1px 0;

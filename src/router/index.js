@@ -7,6 +7,8 @@ import Articlecomplex from '@/components/articles/complexEssay'
 
 Vue.use(Router);
 
+import store from '@/vuex/store'
+
 export default new Router({
   mode:'history',
   routes: [
@@ -14,7 +16,16 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
-      alias:'/home'
+      alias:'/home',
+      // beforeEnter:(to,from,next) => {
+        // if(store.state.isIntoHome){
+        //   next();
+        //   store.state.isIntoHome = false;
+        // }else{
+        //   window.location.reload();
+        //   store.state.isIntoHome = true;
+        // }
+      // }
     },
     {
       path:'/resume',

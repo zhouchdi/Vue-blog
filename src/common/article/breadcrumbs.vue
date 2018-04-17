@@ -22,8 +22,6 @@
     font-size: 12px;
     text-align: left;
     background-color: #fff;
-    border-bottom: 1px solid #EBEBEB;
-    box-shadow: 0 1px 3px rgba(0,0,0,.04);
     color: #999;
     margin:0 15px;
     ul{
@@ -37,6 +35,13 @@
           color: #000;
         }
       }
+    }
+  }
+
+  @media (min-width: 1280px){
+    div.breadcrumbs {
+      margin: 0 auto;
+      max-width: 1280px;
     }
   }
 </style>

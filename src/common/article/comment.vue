@@ -1,5 +1,5 @@
 <template>
-  <div class="comment">
+  <div class="comment" id="comment">
     <div class="comment_title">
       <h3>
         评论<b>92</b>
@@ -36,7 +36,7 @@
   let commentsLength = 0;
   import Says from '@/common/article/says'
     export default {
-        name: "comment",
+      name: "comment",
       components:{
           Says:Says
       },

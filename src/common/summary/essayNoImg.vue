@@ -1,11 +1,11 @@
 <template>
   <article class="article-no-img">
     <header>
-      <a href="">
+      <router-link target="_blank" :to="intoHref">
         Vue.js视频教程
         <i></i>
-      </a>
-      <h2><a target="_blank" href="" title="VUE学习路线 ，让你不迷路 ，请按此顺序学习。-技术胖-胜洪宇关注web前端技术">VUE学习路线 ，让你不迷路 ，请按此顺序学习。<span>(10集)</span></a></h2>
+      </router-link>
+      <h2><router-link target="_blank" :to="intoHref" title="VUE学习路线 ，让你不迷路 ，请按此顺序学习。-技术胖-胜洪宇关注web前端技术">VUE学习路线 ，让你不迷路 ，请按此顺序学习。<span>(10集)</span></router-link></h2>
       <span>置顶</span>
     </header>
     <p class="article_p1">
@@ -21,7 +21,10 @@
 
 <script>
     export default {
-      name: "essayNoImg"
+      name: "essayNoImg",
+      props:{
+        intoHref:String
+      }
     }
 </script>
 

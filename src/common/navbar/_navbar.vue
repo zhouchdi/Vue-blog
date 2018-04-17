@@ -17,12 +17,12 @@
       <div class="bottom_line">
         <!--下左-->
         <ul class="bottom_line_ul1">
-          <li style="vertical-align: bottom;"><a href="" title="zcd的博客"><img src="../../assets/images/my/logo.png" alt="logo"></a></li>
+          <li style="vertical-align: bottom;"><router-link to="/home" title="zcd的博客"><img src="../../assets/images/my/logo.png" alt="logo"></router-link></li>
           <li id="bottom_line_ul1_last_li"><p>关注WEB前端技术<br>每年帮助超过01人前端爱好者学习</p></li>
         </ul>
         <!--下右-->
         <ul class="bottom_line_ul2">
-          <li><a>首页</a></li>
+          <li><router-link target="_self" :to="{name:'Home'}">首页</router-link></li>
           <li><a>视频教程</a></li>
           <li><a>前端日记</a></li>
           <li><a>生活趣事</a></li>

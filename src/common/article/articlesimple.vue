@@ -145,7 +145,7 @@
     }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   @import '../../assets/less/article.less';
   .article{
     /*主要内容*/
